@@ -54,3 +54,47 @@
 h2 {
   margin: 0;
 }
+
+/* Edit form additions */
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.edit-btn {
+  font-size: 0.85rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.star-select {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.star {
+  color: lightgray;
+}
+
+.star-active {
+  color: goldenrod;
+}
+
+.edit-textarea {
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}

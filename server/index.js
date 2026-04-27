@@ -61,4 +61,17 @@ app.get('/api/products/:id/reviews', async (req, res) => {
   }
 });
 
+app.patch('/api/reviews/:id', async (req, res) => {
+  try {
+    const db = mongoose.connection.db;
+    const result = await db.collection('reviews').updateOne(
+      { _id: new mongoose.Types.ObjectId(req.params.id) },
+      { $set: { rating: req.body.rating, comment: req.body.comment } }
+    );
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));
