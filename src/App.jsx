@@ -1,11 +1,15 @@
 import './App.css'
 
+import Results from './components/Results'
+import OrderInfo from './components/OrderInfo'
+
 function App() {
 
   return (
     <>
-      <div>
-        Hello, world!
+      <div className='home-grid'>
+        <Results />
+        <OrderInfo />
       </div>
     </>
   )

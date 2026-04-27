@@ -1,0 +1,9 @@
+.products-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products-button {
+  margin: 1.5rem;
+  font-size: 1.1rem;
+}

@@ -9,7 +9,23 @@
 }
 
 body {
-  margin: 0;
+  margin: 5rem 10%;
   font-family: var(--font-family);
   background-color: var(--cream);
+}
+
+button {
+  padding: .5rem 1rem;
+  font-family: var(--font-family);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--red);
+
+  transition: .2s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
 }

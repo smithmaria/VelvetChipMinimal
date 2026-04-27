@@ -1,0 +1,6 @@
+.order-container {
+  height: 80vh;
+  padding: 0 1rem 1rem;
+  border-radius: 20px;
+  background-color: var(--white);
+}
