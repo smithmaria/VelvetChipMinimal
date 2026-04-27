@@ -49,4 +49,16 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
+app.get('/api/products/:id/reviews', async (req, res) => {
+  try {
+    const db = mongoose.connection.db;
+    const reviews = await db.collection('reviews')
+      .find({ productId: new mongoose.Types.ObjectId(req.params.id) })
+      .toArray();
+    res.json(reviews);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));

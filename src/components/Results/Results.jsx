@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import './Results.css';
 import ProductCard from '../ProductCard/ProductCard';
+import ReviewModal from '../ReviewModal/ReviewModal';
 
 function Results({ onAdd }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     fetch('/api/products')
@@ -29,9 +31,16 @@ function Results({ onAdd }) {
             key={product._id}
             product={product}
             onAdd={onAdd}
+            onClick={() => setSelectedProduct(product)}
           />
         ))}
       </div>
+      {selectedProduct && (
+        <ReviewModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 }
