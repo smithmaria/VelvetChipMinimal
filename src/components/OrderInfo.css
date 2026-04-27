@@ -1,6 +1,14 @@
 .order-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   height: 80vh;
-  padding: 0 1rem 1rem;
+  padding: 0 1.5rem 1rem;
   border-radius: 20px;
   background-color: var(--white);
+}
+
+.place-order {
+  font-size: 1rem;
 }
