@@ -30,4 +30,23 @@ app.get('/api/products', async (req, res) => {
   }
 });
 
+app.post('/api/orders', async (req, res) => {
+  try {
+    const db = mongoose.connection.db;
+    const order = {
+      ...req.body,
+      userId: new mongoose.Types.ObjectId(req.body.userId),
+      orderDate: new Date(req.body.orderDate),
+      items: req.body.items.map(item => ({
+        ...item,
+        productId: new mongoose.Types.ObjectId(item.productId)
+      }))
+    };
+    const result = await db.collection('orders').insertOne(order);
+    res.json({ insertedId: result.insertedId });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Results.css';
 import ProductCard from '../ProductCard/ProductCard';
 
-function Results() {
+function Results({ onAdd }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -27,8 +27,8 @@ function Results() {
         {products.map(product => (
           <ProductCard
             key={product._id}
-            name={product.name}
-            price={product.price.toFixed(2)}
+            product={product}
+            onAdd={onAdd}
           />
         ))}
       </div>
