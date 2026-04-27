@@ -1,7 +1,7 @@
 import './App.css'
 
-import Results from './components/Results'
-import OrderInfo from './components/OrderInfo'
+import Results from './components/Results/Results'
+import OrderInfo from './components/OrderInfo/OrderInfo'
 
 function App() {
 

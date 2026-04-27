@@ -1,6 +1,6 @@
 import './Results.css'
 
-import ProductCard from './ProductCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 function Results() {
   return (
