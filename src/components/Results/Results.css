@@ -1,3 +1,9 @@
+.results-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .products-title {
   display: flex;
   justify-content: space-between;
@@ -6,4 +12,9 @@
 .products-button {
   margin: 1.5rem 0;
   font-size: 1.1rem;
+}
+
+.products-list {
+  height: 72vh;
+  overflow-y: auto;
 }
